@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/697c2c5344.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="box" id="heading">
+        <h1><i class="far fa-calendar-check"></i> <%= date %> </h1>
+    </div>
+
+    <div class="box">
+        <% for(let i = 0; i < myToDo.length; i++) { %>
+            <form action="/delete" method="POST">
+                <div class="item">
+                    <input type="checkbox" value="<%= myToDo[i].description %>" name="checkbox" onchange="this.form.submit()" >
+                    <p><%= myToDo[i].description %></p>  <p><%= myToDo[i].phnum %></p>
+                   
+                </div>
+            </form>
+            
+        <% } %>    
+
+        
+
+        <form action="/" class="class" method="POST">
+            <input type="text" name="newTask" placeholder="Nimi">
+            <input type="text" name="newTask2" placeholder="phnum">
+            <button type="submit">+</button>
+        </form>
+    </div>
+    
+    <footer>
+        <span>Julia Vrn. &#169; 2021</span>
+    </footer>
+</body>
+</html>
+
